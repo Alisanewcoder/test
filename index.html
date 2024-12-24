@@ -17,10 +17,24 @@
         }
         h1 {
             font-size: 5rem;
+            position: absolute;
         }
     </style>
 </head>
 <body>
-    <h1>TESTICLE</h1>
+    <h1 id="movable-text">TESTICLES</h1>
+    <script>
+        function getRandomPosition() {
+            const x = Math.floor(Math.random() * window.innerWidth);
+            const y = Math.floor(Math.random() * window.innerHeight);
+            return { x, y };
+        }
+
+        document.getElementById('movable-text').addEventListener('click', function() {
+            const newPosition = getRandomPosition();
+            this.style.left = newPosition.x + 'px';
+            this.style.top = newPosition.y + 'px';
+        });
+    </script>
 </body>
 </html>
